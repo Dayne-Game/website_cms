@@ -6,17 +6,19 @@ import RequireAuth from './features/auth/RequireAuth'
 import DashboardScreen from './screen/DashboardScreen'
 import { ROLES } from './config/roles'
 import Layout from './components/Layout'
+import Prefetch from './features/auth/Prefetch'
 
 function App() {
 
   return (
     <Routes>
+      <Route path="login" element={<LoginScreen />} />
       <Route path="/" element={<Layout />}>
-        <Route path="login" element={<LoginScreen />} />
-
         <Route element={<PersistLogin />}>
-          <Route element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}>
-            <Route path="dashboard" element={<DashboardScreen />} />
+          <Route element={<Prefetch />}>
+            <Route element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}>
+              <Route index element={<DashboardScreen />} />
+            </Route>
           </Route>
         </Route>
       </Route>

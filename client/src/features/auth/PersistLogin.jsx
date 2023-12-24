@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom"
+import { Outlet, Link, Navigate } from "react-router-dom"
 import { useEffect, useRef, useState } from 'react'
 import { useRefreshMutation } from "./authApiSlice"
 import { useSelector } from 'react-redux'
@@ -51,13 +51,7 @@ const PersistLogin = () => {
         console.log('loading')
         content = <PulseLoader color={"#FFF"} />
     } else if (isError) { //persist: yes, token: no
-        console.log('error')
-        content = (
-            <p className='errmsg'>
-                {`${error?.data?.message} - `}
-                <Link to="/login">Please login again</Link>.
-            </p>
-        )
+        content = <Navigate to="/login" />
     } else if (isSuccess && trueSuccess) { //persist: yes, token: yes
         console.log('success')
         content = <Outlet />
