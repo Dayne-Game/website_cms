@@ -1,9 +1,20 @@
+a {
+    text-decoration: none;
+}
+
 .main_wrapper {
     width: calc(100% - 250px);
     margin-left: 250px;
     min-height: 100vh;
 
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    padding-left: 60px;
+    padding-right: 60px;
+
+
+    background-color: #f4f4f4;
 }
 
 .sidebar {
@@ -12,6 +23,119 @@
     left: 0;
     width: 250px;
     height: 100%;
+}
 
-    /* background: #f64f64; */
+.sidebar .sidebar_logo {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0px 20px;
+
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar_link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #666;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    border-radius: 5px;
+
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
+}
+
+.sidebar_link.active {
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+.sidebar_link i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.sidebar_link:hover {
+    color: #000;
+}
+
+.sidebar_footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar_footer .user_info {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.user_image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user_info i {
+    font-size: 20px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    color: #666;
+
+    font-size: 18px;
+
+    /* text-transform: uppercase; */
+
+    margin-bottom: 10px;
+}
+
+.back-btn:hover {
+    color: #000;
+}
+
+.back-btn i {
+    margin-right: 5px;
+}
+
+.subtitle {
+    color: rgb(102, 102, 135) !important;
+}
+
+.button-icon {
+    display: flex;
+    align-items: center;
+}
+
+.button-icon i {
+    font-size: 20px;
+}
+
+.table_container {
+    margin-top: 50px;
+}
+
+.table_background {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+
+    border: 1px solid #dee2e6;
+    margin-top: 10px;
+}
+
+.table_search_container {
+    width: 250px;
 }

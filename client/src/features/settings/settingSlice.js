@@ -2,11 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const settingSlice = createSlice({
     name: 'setting',
-    initialState: { settings: JSON.parse(localStorage.getItem('settings')) || null },
+    initialState: { settings: null },
     reducers: {
         setSettings: (state, action) => {
             state.settings = action.payload
-            localStorage.setItem('settings', JSON.stringify(action.payload))
         }
     }
 })
