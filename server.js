@@ -25,11 +25,13 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 app.use('/', require('./routes/root'))
 app.use('/api/v1/auth', require('./routes/authRoutes'))
 app.use('/api/v1/users', require('./routes/userRoutes'))
 app.use('/api/v1/settings', require('./routes/settingRoutes'))
+app.use('/uploads', require('./routes/uploadRoutes'))
 
 app.all('*', (req, res) => {
     res.status(404)

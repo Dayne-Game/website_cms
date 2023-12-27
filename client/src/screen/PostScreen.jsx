@@ -18,7 +18,7 @@ const PostScreen = () => {
                 <div className="d-flex align-items-center">
                     <div class="input-group table_search_container">
                         <span class="input-group-text" id="basic-addon1"><i className='bx bx-search' ></i></span>
-                        <input type="text" className="form-control table_search" placeholder="Search..." />
+                        <input type="text" className="form-control table_search" />
                     </div>
                 </div>
 
