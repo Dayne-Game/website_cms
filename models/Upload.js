@@ -9,6 +9,12 @@ const uploadSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    alt: {
+        type: String,
+    },
+    description: {
+        type: String,
+    },
     path: {
         type: String,
         required: true

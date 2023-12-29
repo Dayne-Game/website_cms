@@ -25,7 +25,19 @@ const uploadImage = async (req, res) => {
 
         if(duplicate) return res.status(400).send({ message: 'Image already exists' })
 
-        await Upload.create({ filename: req.file.filename, mimetype: req.file.mimetype, path: req.file.path, user_id: req.user.id, type: req.file.fieldname });
+        console.log(req.body);
+
+        const data = {
+            filename: req.file.filename,
+            mimetype: req.file.mimetype,
+            path: req.file.path,
+            type: req.file.fieldname,
+            user_id: req.user.id,
+            alt: req.body.alt,
+            description: req.body.description 
+        }
+
+        await Upload.create(data);
 
         res.status(200).send({ message: 'Image Uploaded Successfully', image: `/${req.file.path}` })
     })
